@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pixelify+Sans:wght@400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* IMPORTANT for stable layout */
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Minimal aesthetic background (soft, not white, not blue) */
+  background: #f8f7fb;
+  overflow: hidden; /* Prevent scroll when confetti animates */
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #3a3a3a; /* changed from harsh blue to minimal dark grey */
+  font-family: "Pixelify Sans", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #6b6b6b; /* softer aesthetic */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.webcam {
+  position: relative;
+  width: 300px;
+  height: 225px;
+}
+
+/* Webcam video (clean rounded aesthetic) */
+#webcam {
+  display: block;
+  width: 300px;
+  height: 225px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #e9e8f2; /* soft neutral placeholder */
+}
+
+/* Canvas overlay (hand tracking) */
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.cake-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  margin-top: -2rem;
+}
+
+.cake-bg {
+  position: absolute;
+  width: 300px;
+}
+
+.cake {
+  position: absolute;
+  width: 100px;
+  transition: transform 0.3s ease; /* smooth visual when changing gif */
+}
+
+.match {
+  position: absolute;
+  width: 40px;
+  pointer-events: none;
+  transition: left 0.05s ease-out, top 0.05s ease-out;
+  z-index: 10;
+}
+
+.instructions {
+  font-size: 0.65rem;
+  color: #6b6b6b; /* minimal instead of blue */
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.signature {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
+  font-size: 0.6rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: #8a86b8; /* aesthetic soft accent */
+}
+
+/* ===== CONFETTI (FINAL CLEAN VERSION) ===== */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* Soft aesthetic confetti (NOT blue, NOT flashy) */
+.confetti {
+  position: absolute;
+  opacity: 0.95;
+  color: #8a86b8; /* soft lavender aesthetic */
+  will-change: transform, opacity; /* smoother animation */
+}
+
+/* From top flowing down smoothly */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(var(--sway)) rotate(180deg);
+  }
+  100% {
+    transform: translateY(110vh) translateX(calc(var(--sway) * -0.5)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* From bottom floating up (smooth, not assembling) */
+@keyframes confettiRise {
+  0% {
+    transform: translateY(10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40vh) translateX(var(--sway)) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(calc(var(--sway) * -0.5)) rotate(360deg);
+    opacity: 0;
+  }
+}
