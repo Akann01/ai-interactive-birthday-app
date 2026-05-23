@@ -96,6 +96,7 @@ This project runs completely on-device.
 No images or videos are uploaded
 No user data is collected
 Webcam processing happens locally using MediaPipe client-side models
+
 🚀 Future Improvements
 🎈 Personalized birthday messages
 🎊 Confetti gesture interactions
@@ -103,18 +104,5 @@ Webcam processing happens locally using MediaPipe client-side models
 🎤 Voice-based birthday interactions
 🎁 Shareable birthday cards
 🕯️ Multiple candle difficulty levels
-🤝 Contributing
-
-Contributions, ideas, and feature suggestions are welcome!
-
-Feel free to fork the repository and submit a pull request.
-
-📄 License
-
-This project is open-source and available under the MIT License.
-
-<div align="center">
 
 Made with 🎂, JavaScript, and a little AI magic ✨
-
-</div> ```
