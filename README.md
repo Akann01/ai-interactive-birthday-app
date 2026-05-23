@@ -3,6 +3,10 @@
 An AI-powered interactive birthday experience that runs entirely in the browser.  
 Light a virtual birthday cake with your hands and blow out the candles using real-time webcam hand tracking.
 
+<p align="center">
+  <img src="./assets/cake_unlit.gif" width="250"/>
+</p>
+
 Built with JavaScript and MediaPipe Hands for gesture-based interaction.
 
 ---
@@ -61,15 +65,18 @@ ai-interactive-birthday-app/
     ├── match.gif           # Animated match
     └── bayside-breeze.mp3  # Background birthday music
 🚀 Getting Started
-Clone the Repository
+### Clone the Repository
+
+```bash
 git clone https://github.com/Akann01/ai-interactive-birthday-app.git
 cd ai-interactive-birthday-app
+```
 Run the App
 
-Simply open index.html in your browser.
+### Open in Browser
 
-Recommended Browser
-✅ Google Chrome
+Simply open `index.html` in Google Chrome.
+
 Alternative
 
 You can also drag and drop index.html directly into your Chrome browser.
